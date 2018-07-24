@@ -25,8 +25,8 @@ class PlayerDetail extends Component {
     }
 
     componentDidMount() {
-        const { id } = this.props.match.params;
-        this.fetchPlayerDetail(id);
+        const { id, name } = this.props.match.params;
+        this.fetchPlayerDetail(id, name);
         this.fetchStatRanks(id);
         this.fetchTeamInfo(id);
     }
@@ -40,15 +40,16 @@ class PlayerDetail extends Component {
             color: null,
             logoUrl: null
         });
-        const { id } = newProps.match.params;
-        this.fetchPlayerDetail(id);
+        const { id, name } = newProps.match.params;
+        this.fetchPlayerDetail(id, name);
         this.fetchStatRanks(id);
         this.fetchTeamInfo(id);
     }
 
     // get overall stats and the player detail
-    fetchPlayerDetail(id) {
+    fetchPlayerDetail(id, name) {
         fetch(`${BASE_URL}${id}?locale=en-us&expand=stats`)
+            .then(this.handleErrors)
             .then(res => res.json())
             .then(res => {
                 this.setState({
@@ -56,8 +57,15 @@ class PlayerDetail extends Component {
                     stats: res.data.stats
                 })
                 if (this.state.player.game.toLowerCase() !== 'overwatch') {
-                    this.props.history.push('/owstats');
+                    this.props.history.push('/');
                 }
+                if (this.state.player.name.toLowerCase() !== name.toLowerCase()) {
+                    this.props.history.push('/');
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+                this.props.history.push('/');
             });
     }
 
@@ -83,6 +91,13 @@ class PlayerDetail extends Component {
                     logoUrl: res.data.team.data.logo.main.png
                 })
             });
+    }
+
+    handleErrors(response) {
+        if (!response.ok) {
+            throw Error(response.statusText);
+        }
+        return response;
     }
 
     render() {

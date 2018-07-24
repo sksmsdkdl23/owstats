@@ -20,7 +20,7 @@ class PlayerList extends Component {
                         {
                             id: 'name',
                             Header: 'Name',
-                            accessor: d => <Link to={`/owstats/players/${d.playerId}/${d.name}`} style={{ textDecoration: 'none', color: 'orange'}}>{d.name}</Link>,
+                            accessor: d => <Link to={`${process.env.PUBLIC_URL}/players/${d.playerId}/${d.name}`} style={{ textDecoration: 'none', color: 'orange'}}>{d.name}</Link>,
                             resizable: false
                         },
                         {

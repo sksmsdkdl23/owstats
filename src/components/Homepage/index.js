@@ -64,10 +64,11 @@ class HomePage extends Component {
             <h1 className='display-4' style={{ marginTop: '100px' }}>Leader Boards</h1>Post Season
             <LeaderBoards topHealers={topHealers} topDamageDealers={topDamageDealers} topEliminators={topEliminators} />
             <hr />
-            <h1 className='display-4'>Player Stats</h1>
+            <h1 className='display-4'>Players</h1>
+            postseason stats
             <SearchBar searchChange={this.onSearchChange} />
-            <h6>All stats are avg. per 10 minutes unless specified</h6>
             <PlayerList players={filteredPlayers} />
+            <h6>* All stats are avg. per 10 minutes unless specified</h6>
           </div>
           <Footer />
         </div>
