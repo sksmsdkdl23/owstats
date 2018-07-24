@@ -11,8 +11,8 @@ import registerServiceWorker from './registerServiceWorker';
 ReactDOM.render(
     <HashRouter>
         <div>
-            <Route exact path='/owstats' component={HomePage} />
-            <Route path='/owstats/players/:id/:name' component={PlayerDetail} />
+            <Route exact path='/' component={HomePage} />
+            <Route path='/players/:id/:name' component={PlayerDetail} />
         </div>
     </HashRouter>
     , document.getElementById('root'));
