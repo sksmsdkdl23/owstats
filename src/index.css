@@ -1,0 +1,195 @@
+@font-face {
+  font-family: 'koverwatch';
+  font-style: normal;
+  font-weight: normal;
+  src: 
+    url('./assets/fonts/koverwatch.ttf') format('ttf'),
+    url('./assets/fonts/koverwatch.woff') format('woff')
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'koverwatch', sans-serif;
+  font-size: 1.25em;
+  color: #333;
+}
+
+i {
+  margin-right: 5px;
+}
+
+p {
+  margin: 0 auto;
+}
+
+.form-control:focus{
+  border-color: #cccccc;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.card {
+  padding: 0;
+}
+
+.table td, .table th, .thead-dark th{
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+
+.row {
+  margin: 0;
+}
+
+.leader-chart {
+  float: right;
+}
+
+.teammate {
+  border: 0.5px solid lightgray;
+  padding: 10px;
+}
+
+.teammate:hover {
+  background-color: #cccccc;
+}
+
+.container-fluid {
+  padding: 0 !important;
+}
+
+.playerDetail {
+  color: white;
+}
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #f5f5f5;
+}
+
+.loading {
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 80px;
+  margin-left: -25px;
+  margin-top: -40px;
+}
+
+.headshot {
+  margin-left: 15%;
+  margin-right: 10%;
+}
+
+.headshot > img {
+  width: 450px;
+}
+
+.logo {
+  float: left;
+  margin-top: 15%;
+  margin-right: 1%;
+}
+
+.playerDetail {
+  margin-top: 7.5%;
+}
+
+@media only screen and (max-width : 384px) {
+  body {
+    font-size: 10px;
+  }
+  
+  .headshot {
+    margin: 0;
+    padding-left: 15%;
+  }
+
+  .headshot > img {
+    width: 75px;
+  }
+  
+  .logo{
+    display: none;
+  }
+
+  .playerDetail {
+    padding-left: 10%;
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width : 384px) and (max-width : 639px) {
+  body {
+    font-size: 1em;
+  }
+
+  .headshot > img {
+    width: 150px;
+  }
+  
+  .logo{
+    display: none;
+  }
+
+  .headshot {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .playerDetail {
+    padding-left: 40px;
+  }
+
+  .detail {
+    margin-top: 15% !important;
+  }
+
+  .header > div {
+    margin-top: 5%;
+  }
+}
+
+@media only screen and (min-width : 640px) and (max-width : 767px) {
+
+  .headshot {
+    margin: 0;
+  }
+
+  .headshot > img {
+    width: 250px !important;
+    margin-top: 25%;
+  }
+
+  .logo {
+    margin-right: 20px !important;
+  }
+
+  .playerDetail {
+    padding-top: 5%;
+  }
+}
+
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+
+  .headshot {
+    margin-left: 0%;
+  }
+
+  .headshot > img {
+    width: 300px;
+    margin-left: 10%;
+    margin-top: 20%;
+  }
+
+  .playerDetail {
+    margin-top: 5%;
+  }
+}
